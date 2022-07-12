@@ -1,7 +1,7 @@
 class Unicorn {
-  constructor(name, color = "white") {
+  constructor(name, color) {
     this.name = name;
-    this.color = color;
+    this.color = color || "white";
   }
   //What is this test actually asking?
   isWhite() {
