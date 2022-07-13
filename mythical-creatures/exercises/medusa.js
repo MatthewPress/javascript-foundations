@@ -6,10 +6,17 @@ class Medusa {
     this.name = name;
     this.statues = [];
   }
-  gazeAtVictim(person) {
-    // To Do: turn person object just created into a statue
-    var statue = new Statue(person);
-    this.statues.push(statue);
+  gazeAtVictim(victim) {
+    var statue = new Statue(victim.name);
+    if (this.statues.length < 3) {
+      this.statues.push(statue);
+    }
+    else {
+      this.statues.push(statue);
+      var freePerson = new Person(this.statues.shift().name);
+      freePerson.mood = `relieved`;
+      return freePerson;
+    }
   }
 }
 
